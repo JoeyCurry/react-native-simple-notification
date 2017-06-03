@@ -1,0 +1,22 @@
+
+{
+  "name": "react-native-simple-notification",
+  "version": "1.1.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JoeyCurry/react-native-simple-notification"
+  },
+  "keywords": [
+    "react-native"
+  ],
+  "author": "jiangjun",
+  "license": "MIT",
+  "peerDependencies": {
+    "react-native": "^0.44.2"
+  }
+}
