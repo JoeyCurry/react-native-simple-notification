@@ -9,19 +9,37 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  TouchableOpacity
 } from 'react-native';
+import Notification from 'react-native-simple-notification'
 
 export default class example extends Component {
+  constructor(props){
+      super(props);
+  }
+
+  componentDidMount(){
+      Notification.init({
+          title:'安卓测试通知',
+          content:'安卓测试通知内容',
+          smallIcon:'demo',
+          largeIcon:'demo'
+      })
+  }
+
+  handleClick(){
+      Notification.send()
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
+        <TouchableOpacity onPress={()=>{this.handleClick()}}>
+          <Text>
+            handle
+          </Text>
+        </TouchableOpacity>
         <Text style={styles.instructions}>
           Double tap R on your keyboard to reload,{'\n'}
           Shake or press menu button for dev menu

@@ -5,7 +5,7 @@ import {
     Platform
 } from 'react-native';
 
-let RNMyFancyLibrary = NativeModules.RNMyFancyLibrary;
+let RNSimpleNotification = NativeModules.RNSimpleNotification;
 let ios = Platform.OS === 'ios';
 let android = Platform.OS === 'android';
 let title,content,action,soundName;
@@ -23,7 +23,7 @@ export default {
             ...options
         };
         if (android) {
-            RNMyFancyLibrary._init(opt);
+            RNSimpleNotification._init(opt);
         } else {
             title = opt.title == '' ? '测试' : opt.title
             content = opt.content == '' ? '测试内容' : opt.content
@@ -39,7 +39,7 @@ export default {
     },
     send(){
         if (android) {
-            RNMyFancyLibrary.sendNotification()
+            RNSimpleNotification.sendNotification()
         } else {
             PushNotificationIOS.presentLocalNotification({
                 alertBody:content,
